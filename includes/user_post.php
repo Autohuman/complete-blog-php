@@ -2,7 +2,7 @@
 // Post variables
 $post_id = 0;
 $isEditingPost = false;
-$published = 0;
+$published = 1;
 $title = "";
 $post_slug = "";
 $body = "";
@@ -119,7 +119,7 @@ function createPost($request_values)
 				mysqli_query($conn, $sql);
 
 				$_SESSION['message'] = "Post created successfully";
-				header('location: index.php');
+				header('location: https://www.baidu.com');
 				exit(0);
 			}
 		}

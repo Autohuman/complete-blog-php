@@ -52,27 +52,16 @@
 							  <?php echo $topic['name']; ?>
 							  </option>
 						  <?php endforeach ?>
-<!-- 						  <option value="1">One</option>
-						  <option value="2">Two</option>
-						  <option value="3">Three</option> -->
+
 				    	</select>
 					</div>
 					<div class="form-group">
-						<!--Only admin users can view publish input field -->
-						<!-- <?php if ($_SESSION['user']['role'] == "Admin"): ?> -->
-							<!-- display checkbox according to whether post has been published or not -->
-							<!-- <?php if ($published == true): ?> --> -->
-								<label for="publish">
+
+								<label style="display:none;" for="publish">
 									发布
-									<input type="checkbox" value="1" name="publish" checked="checked">&nbsp;
+									<input type="checkbox" style="display:none;" value="1" name="publish" checked="checked">&nbsp;
 								</label>
-<!-- 							<?php else: ?>
-								<label for="publish">
-									发布
-									<input type="checkbox" value="1" name="publish">&nbsp;
-								</label>
-							<?php endif ?>+
-						<?php endif ?> -->
+
 					</div>
 					<div class="form-group"><button type="submit" name="create_post" class="btn btn-outline-success">创建</button></div>
 					</form>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	// connect to database
-	$conn = mysqli_connect("localhost", "root", "991004", "QunXing");
+	$conn = mysqli_connect("localhost", "root", "", "complete-blog-php");
 	mysqli_query($conn,"set names utf8");
 
 
@@ -10,5 +10,5 @@
 	}
     // define global constants
 	define ('ROOT_PATH', realpath(dirname(__FILE__)));
-	define('BASE_URL', 'http://47.101.196.53/CMS/');
+	define('BASE_URL', 'http://localhost:8080/CMS/');
 ?>
