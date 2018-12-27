@@ -98,7 +98,7 @@ function createPost($request_values)
 	  	$featured_image = $_FILES['featured_image']['name'];
 	  	if (empty($featured_image)) { array_push($errors, "Featured image is required"); }
 	  	// image file directory
-	  	$target = "../static/images/" . basename($featured_image);
+	  	$target = "static/images/" . basename($featured_image);
 	  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
 	  		array_push($errors, "Failed to upload image. Please check file settings for your server");
 	  	}
@@ -119,7 +119,7 @@ function createPost($request_values)
 				mysqli_query($conn, $sql);
 
 				$_SESSION['message'] = "Post created successfully";
-				header('location: posts.php');
+				header('location: index.php');
 				exit(0);
 			}
 		}
@@ -163,7 +163,7 @@ function createPost($request_values)
 			// Get image name
 		  	$featured_image = $_FILES['featured_image']['name'];
 		  	// image file directory
-		  	$target = "../static/images/" . basename($featured_image);
+		  	$target = "static/images/" . basename($featured_image);
 		  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
 		  		array_push($errors, "Failed to upload image. Please check file settings for your server");
 		  	}
@@ -180,12 +180,12 @@ function createPost($request_values)
 					$sql = "INSERT INTO post_topic (post_id, topic_id) VALUES($inserted_post_id, $topic_id)";
 					mysqli_query($conn, $sql);
 					$_SESSION['message'] = "Post created successfully";
-					header('location: posts.php');
+					header('location: index.php');
 					exit(0);
 				}
 			}
 			$_SESSION['message'] = "Post updated successfully";
-			header('location: posts.php');
+			header('location: index.php');
 			exit(0);
 		}
 	}
@@ -196,7 +196,7 @@ function createPost($request_values)
 		$sql = "DELETE FROM posts WHERE id=$post_id";
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['message'] = "Post successfully deleted";
-			header("location: posts.php");
+			header("location: index.php");
 			exit(0);
 		}
 	}
@@ -221,7 +221,7 @@ function createPost($request_values)
 
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['message'] = $message;
-			header("location: posts.php");
+			header("location: index.php");
 			exit(0);
 		}
 	}

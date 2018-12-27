@@ -7,14 +7,16 @@ body{
 	margin: 0;
 	text-align: center;
 }
-/* .main_body .leftBody{
-	width: 30%;
-	display: inline-block;
-	height: 100%;
-	background-color: red;
-	float: left;
-	padding: 2% 2% 1% 2%;
-} */
+body > div.navbar{
+	line-height: 21px;
+	padding: 0;
+}
+body > div.navbar > ul{
+	margin-bottom: 0;
+}
+body > div.navbar > ul > li > a{
+
+}
 .main_body .rightBody{
 	width: 80%;
 	display: inline-block;
